@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  service_type: MyString
+  pending_shipments: 1
+  delivered_shipments: 1
+
+two:
+  service_type: MyString
+  pending_shipments: 1
+  delivered_shipments: 1
