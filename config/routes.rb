@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :shipments
   resources :carriers
   resources :customers
   resources :users

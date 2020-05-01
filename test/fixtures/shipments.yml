@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quantity: 1
+  total_weight: 1
+  ship_date: 2020-04-30
+  tracking_number: 1
+  status: MyString
+  user: one
+  carrier: one
+
+two:
+  quantity: 1
+  total_weight: 1
+  ship_date: 2020-04-30
+  tracking_number: 1
+  status: MyString
+  user: two
+  carrier: two
