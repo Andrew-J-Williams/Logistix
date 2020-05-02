@@ -1,10 +1,22 @@
 <h1> Sign Up </h1>
+<h3> Start Tracking Today! </h3>
+<br><br>
 
-<%= form_for(@user) do |t|%> # We will use a form_for when generating a new user
-    <%= t.label :username%>
-    <%= t.text_field :username%>
-    <br>
+<%= form_for(@user) do |t|%>
     <%= t.label :email%>
     <%= t.text_field :email%>
-    <br>
+    
+    <br><br>
+    
+    <%= t.label :username%>
+    <%= t.text_field :username%>
+    
+    <br><br>
+    
+    <%= t.label :password%>
+    <%= t.password_field :password%>
+    
+    <br><br>
+
+    <%= t.submit "Create Account"%>
 <% end %>
