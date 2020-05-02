@@ -1,1 +1,10 @@
 <h1> Sign Up </h1>
+
+<%= form_for(@user) do |t|%> # We will use a form_for when generating a new user
+    <%= t.label :username%>
+    <%= t.text_field :username%>
+    <br>
+    <%= t.label :email%>
+    <%= t.text_field :email%>
+    <br>
+<% end %>
