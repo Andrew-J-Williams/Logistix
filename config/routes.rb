@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/login' => "sessions#new" # Brings the user to the login screen
   post '/login' => "sessions#create" # Takes user information to generate a user session with their info.
   get '/signup' => "users#new" # We don't need a 'post signup' because we already have a route in 'resources :users'
-  
+  delete '/logout' => "sessions#destroy" # Logs the user out
   
   resources :shipments
   resources :carriers
