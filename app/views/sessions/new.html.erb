@@ -1,0 +1,17 @@
+<h1> Log In </h1>
+
+<h4><b><%= flash[:error] %></b></h4>
+
+<%= form_for(:user) do |t|%>
+    <%= t.label :username%>
+    <%= t.text_field :username%>
+    
+    <br><br>
+    
+    <%= t.label :password%>
+    <%= t.password_field :password%>
+    
+    <br><br>
+
+    <%= t.submit "Log In"%>
+<% end %>
