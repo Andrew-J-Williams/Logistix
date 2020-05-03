@@ -2,18 +2,14 @@
 
 <%= form_for(@carrier) do |t|%>
     <%= t.label :name%>
-    <%= t.text_field :username%>
+    <%= t.text_field :name%>
     
     <br><br>
     
-    <%= t.label :password%>
-    <%= t.password_field :password%>
+    <%= t.label :phone%>
+    <%= t.text_field :phone%>
     
     <br><br>
 
     <%= t.submit "Create Carrier"%>
 <% end %>
-
-t.string "service_type"
-t.integer "pending_shipments"
-t.integer "delivered_shipments"
