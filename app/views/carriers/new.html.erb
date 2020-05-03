@@ -1,1 +1,19 @@
 <h1> Create a New Carrier Here! </h1>
+
+<%= form_for(@carrier) do |t|%>
+    <%= t.label :name%>
+    <%= t.text_field :username%>
+    
+    <br><br>
+    
+    <%= t.label :password%>
+    <%= t.password_field :password%>
+    
+    <br><br>
+
+    <%= t.submit "Create Carrier"%>
+<% end %>
+
+t.string "service_type"
+t.integer "pending_shipments"
+t.integer "delivered_shipments"

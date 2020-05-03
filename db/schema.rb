@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_03_205230) do
+ActiveRecord::Schema.define(version: 2020_05_03_211346) do
 
   create_table "carriers", force: :cascade do |t|
-    t.string "service_type"
     t.integer "pending_shipments"
     t.integer "delivered_shipments"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.string "phone"
   end
 
   create_table "services", force: :cascade do |t|
