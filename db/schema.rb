@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_01_003235) do
+ActiveRecord::Schema.define(version: 2020_05_03_205230) do
 
   create_table "carriers", force: :cascade do |t|
     t.string "service_type"
@@ -20,14 +20,12 @@ ActiveRecord::Schema.define(version: 2020_05_01_003235) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "customers", force: :cascade do |t|
+  create_table "services", force: :cascade do |t|
     t.string "name"
-    t.string "address"
-    t.string "phone"
-    t.integer "user_id"
+    t.integer "carrier_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_customers_on_user_id"
+    t.index ["carrier_id"], name: "index_services_on_carrier_id"
   end
 
   create_table "shipments", force: :cascade do |t|
@@ -40,6 +38,9 @@ ActiveRecord::Schema.define(version: 2020_05_01_003235) do
     t.integer "carrier_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "customer"
+    t.string "address"
+    t.string "contact"
     t.index ["carrier_id"], name: "index_shipments_on_carrier_id"
     t.index ["user_id"], name: "index_shipments_on_user_id"
   end
@@ -52,7 +53,7 @@ ActiveRecord::Schema.define(version: 2020_05_01_003235) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "customers", "users"
+  add_foreign_key "services", "carriers"
   add_foreign_key "shipments", "carriers"
   add_foreign_key "shipments", "users"
 end
