@@ -1,1 +1,23 @@
 <h1> Create a Service Option for your Shipment! </h1>
+
+<br><br>
+
+<%= form_for(@service) do |t|%>
+    <div>
+        <%= t.label :name%>
+        <%= t.text_field :name%>
+    </div>
+    
+    <br>
+    <p> Select a Carrier </p>
+    <div>
+    </div>
+
+    <p> Or Create a New Carrier </p>
+    <div>
+    </div>
+
+    <br><br>
+
+    <%= t.submit "Generate Service"%>
+<% end %>
