@@ -19,6 +19,9 @@
         <%= t.fields_for :carrier do |c| %>
             <%= c.label :name %>
             <%= c.text_field :name %>
+            <br>
+            <%= c.label :phone %>
+            <%= c.text_field :phone %>
         <% end %>
     </div>
 
