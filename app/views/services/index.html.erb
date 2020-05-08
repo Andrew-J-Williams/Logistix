@@ -1,6 +1,10 @@
 <h1> Services Management </h1>
 <h3> See which options are available for your shipments </h3>
 
-<%= @service.each do |s| %>
-    <%= s.name %>
+<% @services.each do |service| %>
+    <%= link_to "#{service.name}", service_path(service) %>
 <% end %>
+
+<br><br>
+
+<%= link_to "Create a Service", new_service_path %>

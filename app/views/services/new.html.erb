@@ -11,11 +11,11 @@
     <br>
     <p> Select a Carrier </p>
     <div>
-       <%= t.collection_select :carrier_id, Service.all, :id, :name%>
+       <%= t.collection_select :carrier_id, Carrier.all, :id, :name%>
     </div>
 
     <p> Or Create a New Carrier </p>
-    <div> # This is where we will make our nested form.
+    <div>
         <%= t.fields_for :carrier do |c| %>
             <%= c.label :name %>
             <%= c.text_field :name %>

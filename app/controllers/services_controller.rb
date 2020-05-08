@@ -2,6 +2,10 @@ class ServicesController < ApplicationController
     def index
         @services = Service.all
     end
+
+    def show
+        @service = Service.find(params[:id])
+    end
     
     def new
         @service = Service.new
@@ -15,10 +19,6 @@ class ServicesController < ApplicationController
         else
             render :new
         end
-    end
-
-    def show
-        @service = 
     end
 
     private
