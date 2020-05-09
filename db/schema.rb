@@ -36,13 +36,13 @@ ActiveRecord::Schema.define(version: 2020_05_03_211346) do
     t.integer "tracking_number"
     t.string "status"
     t.integer "user_id", null: false
-    t.integer "carrier_id", null: false
+    t.integer "service_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "customer"
     t.string "address"
     t.string "contact"
-    t.index ["carrier_id"], name: "index_shipments_on_carrier_id"
+    t.index ["service_id"], name: "index_shipments_on_service_id"
     t.index ["user_id"], name: "index_shipments_on_user_id"
   end
 
@@ -55,6 +55,6 @@ ActiveRecord::Schema.define(version: 2020_05_03_211346) do
   end
 
   add_foreign_key "services", "carriers"
-  add_foreign_key "shipments", "carriers"
+  add_foreign_key "shipments", "services"
   add_foreign_key "shipments", "users"
 end
