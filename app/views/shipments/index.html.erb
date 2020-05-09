@@ -1,0 +1,11 @@
+<h1> All Shipments </h1>
+
+<br><br>
+
+<% @shipments.each do |shipment| %>
+    <%= shipment.customer %> (Shipped on <%= shipment.ship_date %>)<br><br>
+<% end %>
+
+<br><br>
+
+<%= link_to "Home", user_path(current_user)%>

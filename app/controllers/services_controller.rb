@@ -8,6 +8,7 @@ class ServicesController < ApplicationController
     def show
         redirect_if_not_logged_in
         @service = Service.find(params[:id])
+        @shipments = Shipment.all
     end
     
     def new

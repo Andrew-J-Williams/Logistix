@@ -1,0 +1,30 @@
+<h1> <%= @shipment.customer %> </h1>
+
+<br><br>
+
+<h2> Service: <%= @shipment.service.name %> - <%= @shipment.service.carrier.name %> </h2>
+
+<br><br>
+
+<h2> Shipment Details: </h2>
+
+<ul>
+    <li><b>Address:</b> <%= @shipment.address %></li>
+    <br>
+    <li><b>Contact:</b> <%= @shipment.contact %></li>
+    <br>
+    <li><b>Total Shipment Weight: </b> <%= @shipment.total_weight %>lbs</li>
+    <br>
+    <li><b>Ship Date: </b> <%= @shipment.ship_date %></li>
+    <br>
+    <li><b>Tracking Number </b> <%= @shipment.tracking_number %></li>
+    <br>
+    <li><b>Status: </b> <%= @shipment.status %></li>
+    <br>
+    
+</ul>
+
+<br><br>
+
+<%= link_to "Home", user_path(current_user)%>
+

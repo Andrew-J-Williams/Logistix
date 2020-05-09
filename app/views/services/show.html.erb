@@ -4,3 +4,15 @@
 
 <p>Name: <%= @service.carrier.name %></p></p>
 <p>Phone Number: <%= @service.carrier.phone %></p></p>
+
+<h2>Shipments Sent with <%= @service.name %></h2>
+    <% @shipments.each do |shipment| %>
+        <% if shipment.service_id == @service.id %>
+            <%= shipment.customer %> - <%= shipment.status %><br><br>
+        <% end %>
+    <% end %>
+
+
+<br><br>
+
+<%= link_to "Home", user_path(current_user)%>
