@@ -1,6 +1,8 @@
 <h1> Create a Shipment </h1>
 
-<h3>Service Type: <%= @service.name %> - <%= @service.carrier.name %></h3>
+<% if params[:service_id]
+    <h3>Service Type: <%= @service.name %> - <%= @service.carrier.name %></h3>
+<% end %>
 
 
 <%= form_for(@shipment) do |t| %>

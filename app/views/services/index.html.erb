@@ -1,11 +1,17 @@
 <h1> Services Management </h1>
-<h3> See which options are available for your shipments </h3>
 
+<br>
+
+<h3> Available Services: </h3>
+
+<ul>
 <% @services.each do |service| %>
-    <%= link_to "#{service.name} - #{service.carrier.name}", service_path(service) %><br>
+    <li><%= link_to "#{service.name} - #{service.carrier.name}", service_path(service) %></li>
 <% end %>
+</ul>
 
 <br><br>
 
-<%= link_to "Create a Service", new_service_path %><br>
+<b><%= link_to "Create a New Service", new_service_path %></b>
+<br><br>
 <%= link_to "Home", user_path(current_user)%>

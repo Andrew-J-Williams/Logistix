@@ -1,8 +1,12 @@
 class ShipmentsController < ApplicationController
 
     def new
-        @service = Service.find_by_id(params[:service_id])
-        @shipment = @service.shipments.build
+        if @service = Service.find_by_id(params[:service_id])
+            #@service = Service.find_by_id(params[:service_id])
+            @shipment = @service.shipments.build
+        else    
+            @shipment = Shipment.new
+        end 
     end
 
     def create
