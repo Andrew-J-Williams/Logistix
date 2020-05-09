@@ -7,12 +7,17 @@ class ShipmentsController < ApplicationController
 
     def create
         @shipment = Shipment.new(shipment_params)
-        
+        # @shipment = current_user.shipments.build(shipment_params)
+        @shipment.user_id = session[:user_id]
         if @shipment.save
             redirect_to shipment_path(@shipment)
         else
-            redirect_to :new
+            render :new
         end
+    end
+
+    def show
+        @shipment = Shipment.find_by_id(params[:id])
     end
 
     def index
