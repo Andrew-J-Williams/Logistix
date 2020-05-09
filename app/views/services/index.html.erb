@@ -2,9 +2,9 @@
 <h3> See which options are available for your shipments </h3>
 
 <% @services.each do |service| %>
-    <%= link_to "#{service.name}", service_path(service) %>
+    <%= link_to "#{service.name} - #{service.carrier.name}", service_path(service) %><br>
 <% end %>
 
 <br><br>
 
-<%= link_to "Create a Service", new_service_path %>
+<%= link_to "Create a Service", new_service_path %><br>
