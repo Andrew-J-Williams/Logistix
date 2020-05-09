@@ -1,10 +1,12 @@
 class ServicesController < ApplicationController
     def index
+        redirect_if_not_logged_in
         @services = Service.all
         @carriers = Carrier.all 
     end
 
     def show
+        redirect_if_not_logged_in
         @service = Service.find(params[:id])
     end
     

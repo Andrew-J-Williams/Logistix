@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
     def welcome
+        redirect_if_logged_in
     end
 
     def new
