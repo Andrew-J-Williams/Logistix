@@ -4,4 +4,9 @@ class Service < ApplicationRecord
   has_many :users, through: :shipments
 
   accepts_nested_attributes_for :carrier
+
+  def self.sort_service
+    order(:flavor)
+  end
+
 end

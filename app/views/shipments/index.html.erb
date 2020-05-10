@@ -2,11 +2,11 @@
 
 <br><br>
 
-<ul>
+
 <% @shipments.each do |shipment| %>
-    <li><%= shipment.customer %> (Shipped on: <%= shipment.ship_date %>)<li><br><br>
+    <%= shipment.customer %> (Shipped on: <%= shipment.ship_date %>)<br><br>
 <% end %>
-</ul>
+
 
 <br><br>
 

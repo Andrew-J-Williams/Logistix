@@ -16,8 +16,8 @@ class ApplicationController < ActionController::Base
         redirect_to login_path if !logged_in?
     end
 
-    def redirect_if_logged_in # Method added by personal preference, redirects user to their homepage when they first arrive at the site.
-        redirect_to user_path(current_user)
-    end
+    #def redirect_if_logged_in # Method added by personal preference, redirects user to their homepage when they first arrive at the site.
+    #    redirect_to user_path(current_user)
+    #end
 
 end
