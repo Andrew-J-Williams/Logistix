@@ -2,27 +2,21 @@
 
 <br><br>
 
-<h2> Pending Shipments </h2>
+<h2> Pending Shipments (<%= @shipments.pending_shipments.count %>) </h2> 
 <% @shipments.each do |shipment| %>
     <% if shipment.user_id == session[:user_id] && shipment.status == "In-transit" %>
-            <%= shipment.customer %><br><br>
+            <%= link_to shipment.customer, shipment_path(shipment) %><br><br>
     <% end %>
 <% end %>
 
 <br><br>
 
-<h2> Delivered Shipments </h2>
+<h2> Delivered Shipments (<%= @shipments.delivered_shipments.count %>) </h2>
 <% @shipments.each do |shipment| %>
     <% if shipment.user_id == session[:user_id] && shipment.status == "Delivered" %>
-            <%= shipment.customer %><br><br>
+        <%= link_to shipment.customer, shipment_path(shipment) %><br><br>
     <% end %>
 <% end %>
 
 
 <br><br>
-
-<%= link_to "Create New Shipment", new_shipment_path %>
-<br>
-<%= link_to "Service Management", services_path %>
-<br>
-<%= link_to "All Shipments", shipments_path %>
