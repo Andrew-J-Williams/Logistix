@@ -6,7 +6,11 @@ class Service < ApplicationRecord
   accepts_nested_attributes_for :carrier
 
   def self.sort_service
-    order(:flavor)
+    order(:name)
+  end
+
+  def name_and_carrier
+    "#{name} - #{carrier.try(:name)}"
   end
 
 end
