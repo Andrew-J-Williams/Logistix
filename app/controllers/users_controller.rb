@@ -17,6 +17,7 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find_by_id(params[:id]) # Checks for user id.
+        @shipments = Shipment.all
         redirect_to '/' if !@user 
     end
 

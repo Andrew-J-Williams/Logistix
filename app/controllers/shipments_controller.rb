@@ -20,7 +20,7 @@ class ShipmentsController < ApplicationController
     end
 
     def show
-        @shipment = Shipment.find_by(params[:id])
+        @shipment = Shipment.find_by_id(params[:id])
     end
 
     def index
@@ -28,11 +28,11 @@ class ShipmentsController < ApplicationController
     end
 
     def edit
-        @shipment = Shipment.find_by(params[:id])
+        @shipment = Shipment.find_by_id(params[:id])
     end
 
     def update
-        @shipment = Shipment.find_by(params[:id])
+        @shipment = Shipment.find_by_id(params[:id])
         if @shipment.update(shipment_params)
             redirect_to shipment_path(@shipment)
         else
