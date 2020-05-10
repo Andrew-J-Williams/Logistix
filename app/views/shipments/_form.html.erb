@@ -1,0 +1,36 @@
+<%= form_for(@shipment) do |t| %>
+
+    <% if params[:service_id] %>
+        <h3>Service Type: <%= @service.name %> - <%= @service.carrier.name %></h3>
+        <%= t.hidden_field :service_id %><br><br>
+    <% else %>
+        <%= t.label :service_id, "Service Type: " %>
+        <%= t.collection_select :service_id, Service.sort_service, :id, :name_and_carrier, include_blank: true %><br><br>
+    <% end %>
+
+
+    <%= t.label :customer, "Customer Name: " %>
+    <%= t.text_field :customer %>
+    <br><br>
+    <%= t.label :address, "Address: " %>
+    <%= t.text_field :address %>
+    <br><br>
+    <%= t.label :contact, "Phone: " %>
+    <%= t.text_field :contact %>
+    <br><br>
+    <%= t.label :total_weight, "Total Weight: " %>
+    <%= t.number_field :total_weight, min:1 %> lbs
+    <br><br>
+    <%= t.label :ship_date, "Ship Date: "%>
+    <%= t.text_field :ship_date %>
+    <br><br>
+    <%= t.label :tracking_number, "Tracking Number: " %>
+    <%= t.text_field :tracking_number %>
+    <br><br>
+    <%= t.label :status, "Status: " %>
+    <%= t.text_field :status %>
+    <br><br>
+
+    <%= t.submit "Create Shipment"%>
+
+<% end %>

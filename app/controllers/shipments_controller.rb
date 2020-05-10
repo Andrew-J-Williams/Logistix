@@ -11,7 +11,6 @@ class ShipmentsController < ApplicationController
 
     def create
         @shipment = Shipment.new(shipment_params)
-        # @shipment = current_user.shipments.build(shipment_params)
         @shipment.user_id = session[:user_id]
         if @shipment.save
             redirect_to shipment_path(@shipment)
@@ -21,11 +20,24 @@ class ShipmentsController < ApplicationController
     end
 
     def show
-        @shipment = Shipment.find_by_id(params[:id])
+        @shipment = Shipment.find_by(params[:id])
     end
 
     def index
         @shipments = Shipment.all
+    end
+
+    def edit
+        @shipment = Shipment.find_by(params[:id])
+    end
+
+    def update
+        @shipment = Shipment.find_by(params[:id])
+        if @shipment.update(shipment_params)
+            redirect_to shipment_path(@shipment)
+        else
+            render :edit
+        end
     end
 
     private
