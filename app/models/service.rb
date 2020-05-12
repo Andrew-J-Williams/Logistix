@@ -5,6 +5,8 @@ class Service < ApplicationRecord
 
   accepts_nested_attributes_for :carrier
 
+  validates :name, presence: true
+
   def self.sort_service
     order(:name)
   end
