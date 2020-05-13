@@ -2,17 +2,7 @@
 <h3> Start Tracking Today! </h3>
 <br><br>
 
-<% if @user.errors.any? %> 
-  <div id="error_explanation">
-    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being created:</h2>
- 
-    <ul>
-        <% @user.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-        <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= render partial: 'layouts/errors', locals: {object: @user}  %>
 
 <%= form_for(@user) do |t|%>
     <%= t.label :email%>

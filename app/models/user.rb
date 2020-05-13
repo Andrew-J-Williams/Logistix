@@ -4,8 +4,7 @@ class User < ApplicationRecord
 
     validates :email, uniqueness: true, presence: true
     validates :username, uniqueness: true, presence: true
+    validates :password, presence: true, length: {within: 6..30, message: "Password must have at least 6 characters"}
 
     has_secure_password
-
-    validates :password, presence: true, length: {within: => 6..30, message: "Password must have at least 6 characters"}
 end

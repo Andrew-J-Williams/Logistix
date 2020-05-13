@@ -2,6 +2,8 @@
 
 <br><br>
 
+<%= render partial: 'layouts/errors', locals: {object: @service}  %>
+
 <%= form_for(@service) do |t|%>
     <div>
         <%= t.label :name %>

@@ -1,15 +1,4 @@
-<% if @shipment.errors.any? %> 
-  <div id="error_explanation">
-    <h2><%= pluralize(@shipment.errors.count, "error") %> prohibited this shipment from being created:</h2>
- 
-    <ul>
-        <% @shipment.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-        <% end %>
-    </ul>
-  </div>
-<% end %>
-
+<%= render partial: 'layouts/errors', locals: {object: @shipment}  %>
 
 <%= form_for(@shipment) do |t| %>
 
