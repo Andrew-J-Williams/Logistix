@@ -7,5 +7,5 @@ class User < ApplicationRecord
 
     has_secure_password
 
-    validates :password, presence: true, length: {:within => 6..30}
+    validates :password, presence: true, length: {within: => 6..30, message: "Password must have at least 6 characters"}
 end
