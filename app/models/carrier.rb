@@ -1,6 +1,6 @@
 class Carrier < ApplicationRecord
     has_many :services
 
-    validates :name, presence: true
-    validates :phone, presence: true
+    validates :name, uniqueness: true 
+    validates :phone, uniqueness: true 
 end

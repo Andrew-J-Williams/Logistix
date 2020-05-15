@@ -13,7 +13,7 @@
     <br>
     <p> Select a Carrier </p>
     <div>
-       <%= t.collection_select :carrier_id, Carrier.all, :id, :name%>
+       <%= t.collection_select :carrier_id, Carrier.all, :id, :name, prompt: true%>
     </div>
 
     <p> Or Create a New Carrier </p>
