@@ -27,6 +27,13 @@ class ServicesController < ApplicationController
         @shipments = Shipment.all
     end
 
+    def destroy
+        @service = Service.find(params[:id])
+        
+        @service.delete
+        redirect_to services_path
+    end
+
     private
 
     def service_params
