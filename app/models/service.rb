@@ -12,8 +12,9 @@ class Service < ApplicationRecord
     order(:name)
   end
 
-  def carrier_attributes
-
+  def carrier_attributes=(attributes) # This method allows us to associate different services with the same carrier.
+    self.carrier = Carrier.find_or_create_by(attributes) if !attributes['name'].empty?
+    self.carrier
   end
 
   def name_and_carrier

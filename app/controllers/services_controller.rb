@@ -1,16 +1,5 @@
 class ServicesController < ApplicationController
-    def index
-        redirect_if_not_logged_in
-        @services = Service.all
-        @carriers = Carrier.all 
-    end
-
-    def show
-        redirect_if_not_logged_in
-        @service = Service.find(params[:id])
-        @shipments = Shipment.all
-    end
-    
+   
     def new
         @service = Service.new
         @service.build_carrier
@@ -21,8 +10,21 @@ class ServicesController < ApplicationController
         if @service.save
             redirect_to service_path(@service)
         else
+            @service.build_carrier
             render :new
         end
+    end
+    
+    def index
+        redirect_if_not_logged_in
+        @services = Service.all
+        @carriers = Carrier.all 
+    end
+
+    def show
+        redirect_if_not_logged_in
+        @service = Service.find(params[:id])
+        @shipments = Shipment.all
     end
 
     private
