@@ -2,32 +2,4 @@
 
 <br><br>
 
-<%= render partial: 'layouts/errors', locals: {object: @service}  %>
-
-<%= form_for(@service) do |t|%>
-    <div>
-        <%= t.label :name %>
-        <%= t.text_field :name %>
-    </div>
-    
-    <br>
-    <p> Select a Carrier </p>
-    <div>
-       <%= t.collection_select :carrier_id, Carrier.all, :id, :name, prompt: true %>
-    </div>
-
-    <p> Or Create a New Carrier </p>
-    <div>
-        <%= t.fields_for :carrier do |c| %>
-            <%= c.label :name %>
-            <%= c.text_field :name %>
-            <br>
-            <%= c.label :phone %>
-            <%= c.text_field :phone %>
-        <% end %>
-    </div>
-
-    <br><br>
-
-    <%= t.submit "Generate Service"%>
-<% end %>
+<%= render partial: 'form'%>
