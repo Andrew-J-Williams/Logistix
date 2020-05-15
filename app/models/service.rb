@@ -15,4 +15,12 @@ class Service < ApplicationRecord
     "#{name} - #{carrier.try(:name)}"
   end
 
+  def unique_service
+    service = Service.find_by(name: name, carrier_id: carrier_id)
+
+    if !!service && service != self
+      errors.add(:name, "is already an option with this carrier.")
+    end
+  end
+
 end
