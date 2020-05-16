@@ -10,6 +10,10 @@ class Shipment < ApplicationRecord
   validates :tracking_number, presence: true
   validates :status, presence: true
 
+  def self.sort_shipments
+    order(:customer)
+  end
+  
   def self.pending_shipments
     where(status: "In-transit")
   end
@@ -17,5 +21,6 @@ class Shipment < ApplicationRecord
   def self.delivered_shipments
     where(status: "Delivered")
   end
+
 end
 
