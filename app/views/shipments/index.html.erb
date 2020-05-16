@@ -4,7 +4,8 @@
 
 
 <% @shipments.each do |shipment| %>
-    <%= shipment.customer %> (Shipped on: <%= shipment.ship_date %>)<br><br>
+    <h3><%= shipment.customer %></h3> 
+    <p>Shipped on: <%= shipment.ship_date %></p><br><br>
 <% end %>
 
 
