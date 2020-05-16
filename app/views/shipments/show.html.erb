@@ -28,7 +28,3 @@
 
 <%= link_to "Edit #{@shipment.customer}'s Shipment", edit_shipment_path(@shipment) if @shipment.user == current_user %>
 
-<br><br>
-
-<%= link_to "Home", user_path(current_user)%>
-

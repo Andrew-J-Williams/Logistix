@@ -4,7 +4,7 @@
 
 
 <% @shipments.each do |shipment| %>
-    <h2><%= shipment.customer %></h2>
+    <h2><%= link_to "#{shipment.customer}", shipment_path(shipment) %></h2>
     <p><%= shipment.service.name %> - <%= shipment.service.carrier.name%></p> 
     <p>Shipped on: <%= shipment.ship_date %></p><br><br>
 <% end %>

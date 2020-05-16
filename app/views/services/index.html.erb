@@ -6,12 +6,10 @@
 
 <ul>
 <% @services.each do |service| %>
-    <li><%= link_to "#{service.name} - #{service.carrier.name}", service_path(service) %></li>
+    <li><h4><%= link_to "#{service.name} - #{service.carrier.name}", service_path(service) %></h4></li>
 <% end %>
 </ul>
 
 <br><br>
 
 <b><%= link_to "Create a New Service", new_service_path %></b>
-<br><br>
-<%= link_to "Home", user_path(current_user)%>

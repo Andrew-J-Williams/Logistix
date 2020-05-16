@@ -1,25 +1,26 @@
 <h1><%= @service.name %></h1>
 
-<h2>Carrier:</h2> 
+<br><br>
+
+<h2>Carrier Information:</h2> 
 
 <p>Name: <%= @service.carrier.name %></p></p>
 <p>Phone Number: <%= @service.carrier.phone %></p></p>
 
-<h2>Shipments Sent with <%= @service.name %></h2>
+<br><br>
+
+<h2>Shipments Sent with <%= @service.name %>: </h2>
+   <ul>
     <% @shipments.each do |shipment| %>
         <% if shipment.service_id == @service.id %>
-            <%= shipment.customer %> - <%= shipment.status %><br><br>
+            <li><%= link_to "#{shipment.customer} - #{shipment.status}", shipment_path(shipment) %></li><br><br>
         <% end %>
     <% end %>
-
+    </ul>
 <br><br>
 
 <b><%= link_to "Create A #{@service.name} Shipment", new_service_shipment_path(@service.id) %></b>
 
 <br><br>
 
-<%= link_to "Modify Service", edit_service_path(@service) %><br>
-
-<br><br>
-
-<%= link_to "Home", user_path(current_user)%>
+<b><%= link_to "Modify Service", edit_service_path(@service) %><br><b>
