@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   post '/login' => "sessions#create" # Takes user information to generate a user session with their info.
   get '/signup' => "users#new" # We don't need a 'post signup' because we already have a route in 'resources :users'
   delete '/logout' => "sessions#destroy" # Logs the user out
+
+  get '/auth/google_oauth2/callback' => 'sessions#omniauth'
   
   resources :shipments
   resources :carriers

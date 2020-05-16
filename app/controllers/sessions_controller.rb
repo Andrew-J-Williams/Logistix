@@ -26,4 +26,8 @@ class SessionsController < ApplicationController
         redirect_to '/' # we then send the user back to our welcome screen.
     end
 
+    def omniauth
+
+    end
+
 end
