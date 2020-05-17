@@ -10,14 +10,21 @@ class SessionsController < ApplicationController
     end
 
     def create
-        @user = User.find_by(username: params[:user][:username]) # Find_by will not throw an error
-        authenticated = @user.try(:authenticate, params[:user][:password]) # Variable that checks to see if the password entered is associated with the username.
-        if authenticated # If the username/password key/value pair are correct...
+        if params[:provider] == 'google_oauth2' 
+            @user = User.generate_from_google_omni(auth) # Utilizes ourc class method defined in the User model
+
             session[:user_id] = @user.id # The session is set equal to the user's id...
-            redirect_to user_path(@user) # and the user is sent to their show page.
-        else # But if the pair does not match...
-            flash[:error] = "Invalid login. Please try again."
-            redirect_to login_path # The user is redirected to the log in page.
+            redirect_to user_path(@user) # then we are redirected to the user's profile.
+        else
+            @user = User.find_by(username: params[:user][:username]) # Find_by will not throw an error
+            authenticated = @user.try(:authenticate, params[:user][:password]) # Variable that checks to see if the password entered is associated with the username.
+            if authenticated # If the username/password key/value pair are correct...
+                session[:user_id] = @user.id # The session is set equal to the user's id...
+                redirect_to user_path(@user) # and the user is sent to their show page.
+            else # But if the pair does not match...
+                flash[:error] = "Invalid login. Please try again."
+                redirect_to login_path # The user is redirected to the log in page.
+            end
         end
     end
 
@@ -27,8 +34,7 @@ class SessionsController < ApplicationController
     end
 
     def omniauth
-        @user = User.generate_from_google_omni(auth) # Utilizes our method defined in the User model
-        @user.save # Saves the information pulled from the user's Google account
+        @user = User.generate_from_google_omni(auth) # Utilizes ourc class method defined in the User model
 
         session[:user_id] = @user.id # The session is set equal to the user's id...
         redirect_to user_path(@user) # then we are redirected to the user's profile.

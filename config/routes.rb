@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/signup' => "users#new" # We don't need a 'post signup' because we already have a route in 'resources :users'
   delete '/logout' => "sessions#destroy" # Logs the user out
 
-  get '/auth/google_oauth2/callback' => 'sessions#omniauth'
+  get '/auth/:provider/callback' => 'sessions#create' # Includes a dyanmic route to give flexibility for users.
   
   resources :shipments
   resources :carriers
@@ -14,4 +14,5 @@ Rails.application.routes.draw do
     resources :shipments, only: [:new, :index]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  # get '/auth/google_oauth2/callback' => 'sessions#omniauth' <= original route for Google omniauth
 end
