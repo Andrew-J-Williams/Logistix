@@ -1,4 +1,8 @@
-<h1> Welcome back, <%= @user.username %>! </h1>
+<% if session[:user_id] == @user.id %>
+    <h1> Welcome, <%= @user.username %>! </h1>
+<% else %>
+    <h1> <%= @user.username %> </h1>
+<% end %>
 
 <br><br>
 
