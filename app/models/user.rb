@@ -7,4 +7,12 @@ class User < ApplicationRecord
     validates :password, presence: true, length: {within: 6..30, message: "Password must have at least 6 characters"}
 
     has_secure_password
+
+    def self.generate_from_google_omni(auth)
+        where(email: auth.info.email).first_or_initialize do |user|
+            user.username = auth.info.name
+            user.email = auth.info.email
+            user.password = SecureRandom.hex
+        end
+    end
 end

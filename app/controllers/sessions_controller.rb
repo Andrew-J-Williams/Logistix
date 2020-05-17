@@ -27,7 +27,17 @@ class SessionsController < ApplicationController
     end
 
     def omniauth
+        @user = User.generate_from_google_omni(auth) # Utilizes our method defined in the User model
+        @user.save # Saves the information pulled from the user's Google account
 
+        session[:user_id] = @user.id # The session is set equal to the user's id...
+        redirect_to user_path(@user) # then we are redirected to the user's profile.
+    end
+
+    private
+
+    def auth # Gives us access to the information necessary to login with Omniauth
+      request.env['omniauth.auth']
     end
 
 end
