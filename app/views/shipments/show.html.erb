@@ -2,7 +2,10 @@
 
 <br><br>
 
-<h2> Creator: <%= @shipment.user.username %> </h2>
+<% if session[:user_id] != @shipment.user.id %>
+    <h2> Creator: <%= @shipment.user.username %> </h2>
+    <br><br>
+<% end %>
 
 <br><br>
 
@@ -12,6 +15,7 @@
 
 <h2> Shipment Details: </h2>
 
+<% if session[:user_id] == @shipment.user.id %>
 <ul>
     <li><b>Address:</b> <%= @shipment.address %></li>
     <br>
@@ -27,6 +31,14 @@
     <br>
     
 </ul>
+<% else %>
+<ul>
+    <li><b>Ship Date: </b> <%= @shipment.ship_date %></li>
+    <br>
+    <li><b>Status: </b> <%= @shipment.status %></li>
+    <br>
+</ul>
+<% end %>
 
 <br><br>
 

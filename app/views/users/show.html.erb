@@ -9,7 +9,7 @@
 <h2> Pending Shipments (<%= @user.shipments.pending_shipments.count %>) </h2> 
 <% @shipments.each do |shipment| %>
     <% if shipment.user_id == session[:user_id] && shipment.status == "In-transit" %>
-            <%= link_to shipment.customer, shipment_path(shipment) %><br><br>
+            <%= link_to "#{shipment.customer} (Shipped: #{shipment.ship_date})", shipment_path(shipment) %><br><br>
     <% end %>
 <% end %>
 
@@ -18,7 +18,7 @@
 <h2> Delivered Shipments (<%= @user.shipments.delivered_shipments.count %>) </h2>
 <% @shipments.each do |shipment| %>
     <% if shipment.user_id == session[:user_id] && shipment.status == "Delivered" %>
-        <%= link_to shipment.customer, shipment_path(shipment) %><br><br>
+        <%= link_to "#{shipment.customer} (Shipped: #{shipment.ship_date})", shipment_path(shipment) %><br><br>
     <% end %>
 <% end %>
 
