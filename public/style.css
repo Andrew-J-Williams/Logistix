@@ -6,14 +6,20 @@ body {
     margin: auto;
   }
 
+  a { color: #333}
+
 body a {
     text-decoration: none;
 }
 
+.welcome {
+    text-align: center;
+}
+
 .topnavbar {
     text-align: center;
-    color: white;
-    background-color: purple;
+    color: #ac0;;
+    background-color: #083;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -29,4 +35,9 @@ body a {
     font-family: Tahoma, Verdana, Segoe, sans-serif;
     color: white;
     padding: 14px 16px;
+  }
+
+  .topnavbar a:hover {
+    color: #ac0;
+    transition: 0.3s;
   }
