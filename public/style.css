@@ -2,6 +2,9 @@ body {
     background: url("https://i.imgur.com/uONfVBN.png");
     background-color: white;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     font-family: 'Lora', serif;
     font-weight: 300;
     color: #333;

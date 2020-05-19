@@ -1,0 +1,7 @@
+.user_container {
+    position: absolute;
+	top: 70px;
+	bottom: 0;
+	left: 70px;
+    right: 0;
+}
