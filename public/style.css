@@ -1,7 +1,8 @@
 body {
     background-color: white;
     background-size: cover;
-    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    font-family: 'Lora', serif;
+    font-weight: 300;
     color: #333;
     margin: auto;
   }
@@ -14,6 +15,27 @@ body a {
 
 .welcome {
     text-align: center;
+    background-color: #083;;
+    
+}
+
+h1.loglogo {
+    color: white;
+    text-shadow: 2px 2px black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 50;
+    font-size: 80px;
+}
+
+h1.loglogoleft {
+    position: absolute;
+    top: -11px;
+    left: 8px;
+    color: white;
+    text-shadow: 2px 2px black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 50;
+    font-size: 30px;
 }
 
 .topnavbar {
