@@ -1,4 +1,5 @@
 body {
+    background: url("https://i.imgur.com/uONfVBN.png");
     background-color: white;
     background-size: cover;
     font-family: 'Lora', serif;
@@ -7,24 +8,61 @@ body {
     margin: auto;
   }
 
-  a { color: #333}
+a { color: #333}
 
 body a {
     text-decoration: none;
 }
 
-.welcome {
+
+.backwelcome {
+    background-color: #083;
+    height: 550px;
+    width: 600px;
+    margin: 0 auto;
+    opacity: 85%;
     text-align: center;
-    background-color: #083;;
-    
+}
+
+.welcome {
+    opacity: 400%;
+    color: white;
+    text-shadow: 1px 1px black;
+}
+
+.welcome a {
+    color: white;
+    text-shadow: 1px 1px black;
+    opacity: 400%;
+}
+
+p.welcome_button {
+    display: inline-block;
+    background-color: #333;
+    height: 30px;
+    width: 200px;
+    color: white;
+    padding-top: 8px;
+    border-style: solid;
+    border-width: thin;
+    text-decoration: none;
+    opacity: 400%;
+    transition: 0.4s;
+}
+
+p.welcome_button:hover {
+    background-color: #ac0;
+    transition: 0.4s;
 }
 
 h1.loglogo {
+    padding-top: 40px;
     color: white;
     text-shadow: 2px 2px black;
     font-family: 'Montserrat', sans-serif;
     font-weight: 50;
     font-size: 80px;
+    opacity: 100%;
 }
 
 h1.loglogoleft {
