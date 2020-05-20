@@ -1,5 +1,7 @@
+<div class="new_user">
+
 <h1> Sign Up </h1>
-<h3> Start Tracking Today! </h3>
+<i><h3> Start Tracking Today! </h3></i>
 <br><br>
 
 <%= render partial: 'layouts/errors', locals: {object: @user}  %>
@@ -18,7 +20,9 @@
     <%= t.label :password%>
     <%= t.password_field :password%>
     
-    <br><br>
+    <br><br><br>
 
     <%= t.submit "Create Account"%>
 <% end %>
+
+</div>

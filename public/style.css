@@ -10,8 +10,6 @@ body {
     margin: auto;
   }
 
-
-
 .backwelcome {
     background-color: #083;
     height: 550px;
@@ -75,8 +73,8 @@ h1.loglogoleft {
 }
 
 .topnavbar {
-    text-align: center;
-    color: #ac0;;
+    text-align: right;
+    color: white;;
     background-color: #083;
     list-style-type: none;
     margin: 0;
@@ -109,7 +107,6 @@ h1.loglogoleft {
     color: white;
     text-shadow: 1px 1px black;
 
-    position: absolute;
 	top: 0;
 	bottom: 0;
 	left: 0;
@@ -119,5 +116,26 @@ h1.loglogoleft {
   }
 
   .login h1 {
+    padding-top: 10px;
+  }
+
+  .new_user {
+    height: 250px;
+    width: 350px;
+    background-color: #083;
+    opacity: 85%;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px black;
+
+	top: 0;
+	bottom: 0;
+	left: 0;
+    right: 0;
+    
+    margin: auto;
+  }
+
+  .new_user h1 {
     padding-top: 20px;
   }
