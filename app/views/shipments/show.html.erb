@@ -1,3 +1,5 @@
+<div class="user_container ">
+
 <h1> <%= @shipment.customer %> </h1>
 
 <br><br>
@@ -42,5 +44,6 @@
 
 <br><br>
 
-<%= link_to "Edit #{@shipment.customer}'s Shipment", edit_shipment_path(@shipment) if @shipment.user == current_user %>
+<b><i><%= link_to "Edit #{@shipment.customer}'s Shipment", edit_shipment_path(@shipment) if @shipment.user == current_user %></i></b>
 
+</div>

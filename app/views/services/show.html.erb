@@ -1,3 +1,5 @@
+<div class="user_container ">
+
 <h1><%= @service.name %></h1>
 
 <br><br>
@@ -19,8 +21,10 @@
     </ul>
 <br><br>
 
-<b><%= link_to "Create A #{@service.name} Shipment", new_service_shipment_path(@service.id) %></b>
+<b><i><%= link_to "Create A #{@service.name} Shipment", new_service_shipment_path(@service.id) %></i></b>
 
 <br><br>
 
-<b><%= link_to "Modify Service", edit_service_path(@service) %><br><b>
+<b><i><%= link_to "Modify Service", edit_service_path(@service) %><br></i><b>
+
+</div>
