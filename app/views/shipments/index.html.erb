@@ -1,12 +1,14 @@
-<h1> All Shipments </h1>
+<div class="user_container ">
+    <h1> All Shipments </h1>
 
-<br>
+    <br>
 
-<% @shipments.each do |shipment| %>
-    <h3><%= link_to "#{shipment.customer}", shipment_path(shipment) %></h3>
-    <p><%= shipment.service.name %> - <%= shipment.service.carrier.name%></p> 
-    <p>Shipped on: <%= shipment.ship_date %></p><br>
-<% end %>
+    <% @shipments.each do |shipment| %>
+        <h3><%= link_to "#{shipment.customer}", shipment_path(shipment) %></h3>
+        <p><%= shipment.service.name %> - <%= shipment.service.carrier.name%></p> 
+        <p>Shipped on: <%= shipment.ship_date %></p><br>
+    <% end %>
 
 
-<br><br>
+    <br><br>
+</div>
