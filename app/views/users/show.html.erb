@@ -11,7 +11,7 @@
 <% @shipments.each do |shipment| %>
     <ul>
     <% if shipment.user_id == session[:user_id] && shipment.status == "In-transit" %>
-            <li><%= link_to "#{shipment.customer} (Shipped: #{shipment.ship_date})", shipment_path(shipment) %></li>
+            <li><%= link_to "#{shipment.customer} (Shipped: #{shipment.ship_date.strftime("%m/%d/%Y")})", shipment_path(shipment) %></li>
     <% end %>
     </ul>
 <% end %>
@@ -22,7 +22,7 @@
 <% @shipments.each do |shipment| %>
     <ul>
     <% if shipment.user_id == session[:user_id] && shipment.status == "Delivered" %>
-        <li><%= link_to "#{shipment.customer} (Shipped: #{shipment.ship_date})", shipment_path(shipment) %></li>
+        <li><%= link_to "#{shipment.customer} (Shipped: #{shipment.ship_date.strftime("%m/%d/%Y")})", shipment_path(shipment) %></li>
     <% end %>
     </ul>
 <% end %>

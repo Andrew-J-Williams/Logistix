@@ -6,7 +6,7 @@ class Shipment < ApplicationRecord
   validates :address, presence: true
   validates :contact, presence: true
   validates :total_weight, presence: true
-  validates :ship_date, presence: true
+  validates :ship_date, presence: { message: 'must be formatted as follows: mm/dd/yyyy' }
   validates :tracking_number, presence: true
   validates :status, presence: true
 
