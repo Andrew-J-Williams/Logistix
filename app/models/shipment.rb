@@ -9,6 +9,7 @@ class Shipment < ApplicationRecord
   validates :ship_date, presence: { message: 'must be formatted as follows: mm/dd/yyyy' }
   validates :tracking_number, presence: true
   validates :status, presence: true
+  validates_inclusion_of :status, :in => %w( In-transit Delivered )
 
   def self.sort_shipments
     order(:customer)
