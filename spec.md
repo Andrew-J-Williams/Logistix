@@ -1,0 +1,1 @@
+Specifications for the Rails Assessment
