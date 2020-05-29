@@ -44,6 +44,6 @@
 
 <br><br>
 
-<b><i><%= link_to "Edit #{@shipment.customer}'s Shipment", edit_shipment_path(@shipment) if @shipment.user == current_user %></i></b>
+<b><%= link_to "Edit", edit_shipment_path(@shipment) if @shipment.user == current_user %></b>
 
 </div>

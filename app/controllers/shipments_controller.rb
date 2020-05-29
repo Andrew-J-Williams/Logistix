@@ -1,4 +1,5 @@
 class ShipmentsController < ApplicationController
+    before_action :redirect_if_not_logged_in
 
     def new
         if @service = Service.find_by_id(params[:service_id])

@@ -21,10 +21,10 @@
     </ul>
 <br><br>
 
-<b><i><%= link_to "Create A #{@service.name} Shipment", new_service_shipment_path(@service.id) %></i></b>
+<b><%= link_to "Edit", edit_service_path(@service) %><br><b>
 
 <br><br>
 
-<b><i><%= link_to "Modify Service", edit_service_path(@service) %><br></i><b>
+<b><%= link_to "Create A #{@service.name} Shipment", new_service_shipment_path(@service.id) %></b>
 
 </div>
