@@ -30,11 +30,14 @@ class ShipmentsController < ApplicationController
 
     def edit
         @shipment = Shipment.find_by_id(params[:id])
+        if @shipment.user_id != session[:user_id]
+            render :show
+        end
     end
 
     def update
         @shipment = Shipment.find_by_id(params[:id])
-        if @shipment.update(shipment_params)
+        if @shipment.update(shipment_params) && @shipment.user_id == session[:user_id]
             redirect_to shipment_path(@shipment)
         else
             render :edit
