@@ -11,10 +11,9 @@ class Shipment < ApplicationRecord
   validates :status, presence: true
   validates_inclusion_of :status, :in => %w( In-transit Delivered )
 
-  def self.sort_shipments
-    order(:customer)
-  end
-  
+  scope :sort_shipments, -> { order(customer: :asc) }
+  scope :sort_by_date, -> { order(ship_date: :asc) }
+
   def self.pending_shipments
     where(status: "In-transit")
   end

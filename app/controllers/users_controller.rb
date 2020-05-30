@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     def show
         redirect_if_not_logged_in
         @user = User.find_by_id(params[:id]) # Checks for user id.
-        @shipments = Shipment.all
+        @shipments = Shipment.sort_by_date
         redirect_to '/' if !@user 
     end
 

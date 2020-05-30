@@ -25,7 +25,7 @@ class ShipmentsController < ApplicationController
     end
 
     def index
-        @shipments = Shipment.all.sort_shipments
+        @shipments = Shipment.sort_shipments
     end
 
     def edit
