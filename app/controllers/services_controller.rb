@@ -18,7 +18,7 @@ class ServicesController < ApplicationController
     
     def index
         redirect_if_not_logged_in
-        @services = Service.all
+        @services = Service.sort_service
         @carriers = Carrier.all 
     end
 
