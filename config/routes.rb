@@ -13,6 +13,5 @@ Rails.application.routes.draw do
   resources :services do # Our nested route.
     resources :shipments, only: [:new, :index]
   end
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  # get '/auth/google_oauth2/callback' => 'sessions#omniauth' <= original route for Google omniauth
+ 
 end

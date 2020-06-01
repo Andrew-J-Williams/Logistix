@@ -1,24 +1,12 @@
-# README
+# Logistix - Keep Track of Your Shipments
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Logistix is a web based application designed to help individuals and businesses keep track of their shipments. A user can create an account, either through the application or through Google, and start organizing their pending and delivered shipments. You'll never lose track of your customer's information again!
 
-Things you may want to cover:
+## Installation
+Fork and clone the repo Run bundle install to get all the dependencies Run rake db:migrate to set up the DataBase Run rackup to start the server
 
-* Ruby version
+## Contributing
+Bug reports and pull requests are welcome on GitHub at https://github.com/Andrew-J-Williams/Logistix. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## License
+The gem is available as open source under the terms of the MIT License.
