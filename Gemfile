@@ -8,7 +8,7 @@ gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
-gem 'puma', '~> 4.1'
+gem "puma", ">= 4.3.5"
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -25,6 +25,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'dotenv-rails'
+gem "activesupport", ">= 6.0.3.1"
+gem "actionpack", ">= 6.0.3.1"
+gem "activestorage", ">= 6.0.3.1"
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -56,7 +59,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-gem "activesupport", ">= 6.0.3.1"
-gem "actionpack", ">= 6.0.3.1"
-gem "activestorage", ">= 6.0.3.1"
