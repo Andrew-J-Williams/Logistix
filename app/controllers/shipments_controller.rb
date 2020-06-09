@@ -25,7 +25,11 @@ class ShipmentsController < ApplicationController
     end
 
     def index
-        @shipments = Shipment.sort_shipments
+        if @service = Service.find_by_id(params[:service_id])
+            @shipments = @service.shipments
+        else    
+            @shipments = Shipment.sort_shipments
+        end
     end
 
     def edit
