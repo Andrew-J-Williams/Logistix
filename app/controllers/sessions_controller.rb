@@ -34,7 +34,7 @@ class SessionsController < ApplicationController
     end
 
     def omniauth
-        @user = User.generate_from_google_omni(auth) # Utilizes ourc class method defined in the User model
+        @user = User.generate_from_google_omni(auth) # Utilizes our class method defined in the User model
 
         session[:user_id] = @user.id # The session is set equal to the user's id...
         redirect_to user_path(@user) # then we are redirected to the user's profile.
