@@ -5,7 +5,8 @@
 <br><br>
 
 <% if session[:user_id] != @shipment.user.id %>
-    <h2> Creator: <%= @shipment.user.username %> </h2>
+    <h2>Creator:</h2>
+    <h3><%= link_to "#{@shipment.user.username}", user_path(@shipment.user)%></h3>
     <br><br>
 <% end %>
 
