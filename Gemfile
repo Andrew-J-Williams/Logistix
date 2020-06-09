@@ -28,6 +28,9 @@ gem 'dotenv-rails'
 gem "activesupport", ">= 6.0.3.1"
 gem "actionpack", ">= 6.0.3.1"
 gem "activestorage", ">= 6.0.3.1"
+gem "websocket-extensions", ">= 0.1.4"
+
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
