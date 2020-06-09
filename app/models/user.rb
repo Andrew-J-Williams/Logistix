@@ -2,7 +2,7 @@ class User < ApplicationRecord
     has_many :shipments
     has_many :services, through: :shipments
 
-    validates :email, uniqueness: true, presence: true
+    validates :email, uniqueness: true, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }
     validates :username, uniqueness: true, presence: true
     validates :password, presence: true
 

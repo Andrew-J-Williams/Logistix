@@ -7,3 +7,19 @@
 	color: red;
 	font-size: 15px;
 }
+
+.new_user h3.error {
+	color: red;
+	font-style: italic;
+}
+
+.new_user p.error {
+	color: red;
+	font-size: 15px;
+}
+
+.login h4 {
+    color: red;
+    font-style: italic;
+  }
+

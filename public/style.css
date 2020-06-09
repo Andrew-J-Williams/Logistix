@@ -119,13 +119,8 @@ h1.loglogoleft {
     padding-top: 10px;
   }
 
-  .login h4 {
-    color: red;
-    font-style: italic;
-  }
-
   .new_user {
-    height: 550px;
+    height: 350px;
     width: 350px;
     background-color: #083;
     opacity: 85%;
