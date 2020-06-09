@@ -1,0 +1,9 @@
+.user_container h3.error {
+	color: red;
+	font-style: italic;
+}
+
+.user_container p.error {
+	color: red;
+	font-size: 15px;
+}
