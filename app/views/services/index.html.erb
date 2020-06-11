@@ -1,19 +1,19 @@
 <div class="user_container ">
 
-<h1> Services Management </h1>
+    <h1> Services Management </h1>
 
-<br>
+    <br>
 
-<h2> Available Services: </h2>
+    <h2> Available Services: </h2>
 
-<ul>
-<% @services.each do |service| %>
-    <li><h4><%= link_to "#{service.name} - #{service.carrier.name}", service_path(service) %></h4></li>
-<% end %>
-</ul>
+    <ul>
+        <% @services.each do |service| %>
+             <li><h4><%= link_to "#{service.name} - #{service.carrier.name}", service_path(service) %></h4></li>
+        <% end %>
+    </ul>
 
-<br><br>
+    <br><br>
 
-<b><%= link_to "Create a New Service", new_service_path %></b>
+    <b><%= link_to "Create a New Service", new_service_path %></b>
 
 </div>

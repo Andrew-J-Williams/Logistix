@@ -1,21 +1,21 @@
 <div class="user_container ">
 
-<h1><%= @service.name %></h1>
+    <h1><%= @service.name %></h1>
 
-<br><br>
+    <br><br>
 
-<h2>Carrier Information:</h2> 
+    <h2>Carrier Information:</h2> 
 
-<p>Name: <%= @service.carrier.name %></p>
-<p>Phone Number: <%= @service.carrier.phone %></p>
+    <p>Name: <%= @service.carrier.name %></p>
+    <p>Phone Number: <%= @service.carrier.phone %></p>
 
-<br><br>
+    <br><br>
 
-<h3><b><b><%= link_to "Create A New #{@service.name} Shipment", new_service_shipment_path(@service.id) %></b></h3>
+    <h3><b><b><%= link_to "Create A New #{@service.name} Shipment", new_service_shipment_path(@service.id) %></b></h3>
 
-<h3><b><%=link_to "View All Shipments Sent with #{@service.name}", service_shipments_path(@service.id) %></b></h3>
+    <h3><b><%=link_to "View All Shipments Sent with #{@service.name}", service_shipments_path(@service.id) %></b></h3>
 
-<h3><b><%= link_to "Edit Service", edit_service_path(@service) %></b></h3>
+    <h3><b><%= link_to "Edit Service", edit_service_path(@service) %></b></h3>
 
 
 </div>

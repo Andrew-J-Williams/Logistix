@@ -9,7 +9,7 @@ class User < ApplicationRecord
     has_secure_password
 
     def self.generate_from_google_omni(auth)
-        self.find_or_create_by(username: auth[:info][:email]) do |u|
+        self.find_or_create_by(email: auth[:info][:email]) do |u|
             u.email = auth[:info][:email]
             u.password = SecureRandom.hex
         end
