@@ -1,5 +1,6 @@
 <%= render partial: 'layouts/errors', locals: {object: @shipment}  %>
 
+
 <%= form_for(@shipment) do |t| %>
 
     <% if params[:service_id] %>
@@ -23,7 +24,7 @@
     <%= t.label :total_weight, "Total Weight (lbs): " %>
     <%= t.number_field :total_weight, min:1 %>
     <br><br>
-    <%= t.label :ship_date, "Ship Date (mm/dd/yyyy): "%>
+    <%= t.label :ship_date, "Ship Date (dd/mm/yyyy): "%>
     <%= t.text_field :ship_date %>
     <br><br>
     <%= t.label :tracking_number, "Tracking Number: " %>

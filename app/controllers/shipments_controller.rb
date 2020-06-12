@@ -4,7 +4,6 @@ class ShipmentsController < ApplicationController
 
     def new
         if @service = Service.find_by_id(params[:service_id])
-            @service = Service.find_by_id(params[:service_id])
             @shipment = @service.shipments.build
         else    
             @shipment = Shipment.new
@@ -13,11 +12,7 @@ class ShipmentsController < ApplicationController
 
     def create
         @shipment = current_user.shipments.build(shipment_params)
-        if @shipment.save
-            redirect_to shipment_path(@shipment)
-        else
-            render :new
-        end
+        save_shipment
     end
 
     def show
@@ -32,20 +27,18 @@ class ShipmentsController < ApplicationController
     end
 
     def edit
-        if @shipment.user_id != session[:user_id]
-            flash[:message] = "You do not have access to view all parameters."
+        if !user_shipment
+            flash[:error] = "You do not have access to view all parameters."
             redirect_to shipment_path(@shipment)
         end
     end
 
     def update
-        #@shipment.update(shipment_params) && @shipment.user_id == session[:user_id]
-        if current_user.shipments.update(shipment_params)
-            redirect_to shipment_path(@shipment)
-        else
-            render :edit
-        end
+        @shipment.update(shipment_params) && user_shipment
+        save_shipment
     end
+
+
 
     private
 
@@ -55,6 +48,18 @@ class ShipmentsController < ApplicationController
 
     def set_shipment
         @shipment = Shipment.find_by_id(params[:id])
+    end
+
+    def save_shipment
+        if @shipment.save
+            redirect_to shipment_path(@shipment)
+        else
+            render :new
+        end
+    end
+
+    def user_shipment
+        @shipment.user_id == session[:user_id]
     end
 
 end
