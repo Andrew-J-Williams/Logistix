@@ -4,9 +4,10 @@ class User < ApplicationRecord
 
     validates :email, uniqueness: true, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }
     validates :username, uniqueness: true, presence: true
-    validates :password, presence: true
 
     has_secure_password
+
+    scope :find_user, -> {where username: params[:user][:username]}
 
     def self.generate_from_google_omni(auth)
         self.find_or_create_by(email: auth[:info][:email]) do |u|

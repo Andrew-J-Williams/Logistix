@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
 
             set_session # The session is set equal to the user's id, then we are redirected to the user's profile.
         else
-            @user = User.find_by(username: params[:user][:username]) # Find_by will not throw an error
+            @user = User.find_user # Scope method here will check to see if our username matches the input 
             authenticated = @user.try(:authenticate, params[:user][:password]) # Variable that checks to see if the password entered is associated with the username.
             if authenticated # If the username/password key/value pair are correct...
                 set_session # The session is set equal to the user's id, and the user is sent to their show page.
