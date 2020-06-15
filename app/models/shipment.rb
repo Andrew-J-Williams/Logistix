@@ -13,14 +13,8 @@ class Shipment < ApplicationRecord
 
   scope :sort_shipments, -> { order(customer: :asc) }
   scope :sort_by_date, -> { order(ship_date: :asc) }
-
-  def self.pending_shipments
-    where(status: "In-transit")
-  end
-
-  def self.delivered_shipments
-    where(status: "Delivered")
-  end
+  scope :pending_shipments, -> { where(status: "In-transit") }
+  scope :delivered_shipments, -> { where(status: "Delivered") }
 
 end
 
