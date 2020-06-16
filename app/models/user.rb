@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
     has_secure_password
 
-    scope :find_user, -> {where username: params[:user][:username]}
+    #scope :find_user, -> {where username: params[:user][:username]}
 
     def self.generate_from_google_omni(auth)
         self.find_or_create_by(email: auth[:info][:email]) do |u|

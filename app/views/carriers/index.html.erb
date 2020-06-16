@@ -1,0 +1,27 @@
+<div class="user_container ">
+
+
+    <h1> Carriers </h1>
+
+
+    <%= form_tag carriers_path, method: :get do %> <!-- I used the 'form_tag' with the 'carriers_path' to allow for more flexibility -->
+        <%= label_tag 'Search:' %> 
+        <%= text_field_tag :query, params[:query] %><br><br> <!-- params[:query] accepts the text inputed by the user, and will be used in our form when the page is reloaded -->
+        <%= submit_tag 'Find Carrier' %>
+    <% end %>
+
+    <br><br>
+
+    <!-- When the index page loads, a list of carriers will display. When the user enters and submits the form, the content displayed will change -->
+
+    <% @carriers.each do |carrier| %>
+        <h2><%= carrier.name %></h2>
+        <p><%= carrier.phone %></p>
+        <% @results += 1 %> <!-- We add 1 to our counter each time a carrier result is displayed -->
+    <% end %>
+
+    <br>
+
+    <h4>Results: <%= @results %> Carrier(s) Found</h4> <!-- The total number of search results will show here after the variable has been iterated over completely -->
+
+</div>
