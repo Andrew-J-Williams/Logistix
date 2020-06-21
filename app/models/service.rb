@@ -8,7 +8,7 @@ class Service < ApplicationRecord
   validates :name, presence: true
   validate :unique_service
 
-  scope :sort_service, -> { order(name: :asc) }
+  scope :sort_service, -> { order(name: :asc) } # This scope method sorts our services by name
 
   def carrier_attributes=(attributes) # This method allows us to associate different services with the same carrier.
     self.carrier = Carrier.find_or_create_by(attributes) if !attributes['name'].empty?
